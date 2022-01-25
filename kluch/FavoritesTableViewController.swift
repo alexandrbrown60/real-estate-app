@@ -7,6 +7,6 @@
 
 import UIKit
 
-class FavoritesTableViewController: UITabBarController {
+class FavoritesTableViewController: UITableViewController {
     
 }

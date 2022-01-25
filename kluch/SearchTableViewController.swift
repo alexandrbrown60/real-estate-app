@@ -7,6 +7,6 @@
 
 import UIKit
 
-class SearchTableViewController: UITabBarController {
+class SearchTableViewController: UITableViewController {
     
 }
