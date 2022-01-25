@@ -42,11 +42,11 @@ enum TabBar: String {
         let systemName: String
         switch self {
         case .home:
-            systemName = "person.3.fill"
+            systemName = "house.fill"
         case .search:
-            systemName = "person.3.fill"
+            systemName = "magnifyingglass"
         case .favorites:
-            systemName = "person.3.fill"
+            systemName = "heart.fill"
         }
         guard let image = UIImage(systemName: systemName) else {
             fatalError("Unable to retrieve system image: \(systemName)")

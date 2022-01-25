@@ -16,6 +16,8 @@
 		1FE444DF27A00ED9006A364E /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE444DE27A00ED9006A364E /* SearchTableViewController.swift */; };
 		1FE444E127A00EEC006A364E /* FavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE444E027A00EEC006A364E /* FavoritesTableViewController.swift */; };
 		1FE444E327A01272006A364E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE444E227A01272006A364E /* TabBarController.swift */; };
+		1FE444E727A0317A006A364E /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE444E627A0317A006A364E /* NewsView.swift */; };
+		1FE444EA27A031FE006A364E /* NewsBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE444E927A031FE006A364E /* NewsBoxView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		1FE444DE27A00ED9006A364E /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		1FE444E027A00EEC006A364E /* FavoritesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewController.swift; sourceTree = "<group>"; };
 		1FE444E227A01272006A364E /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		1FE444E627A0317A006A364E /* NewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsView.swift; sourceTree = "<group>"; };
+		1FE444E927A031FE006A364E /* NewsBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsBoxView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +73,7 @@
 				1FE444D327A00B95006A364E /* Info.plist */,
 				1FE444DA27A00DF9006A364E /* TabBarTitle.swift */,
 				1FE444E227A01272006A364E /* TabBarController.swift */,
-				1FE444DC27A00EA8006A364E /* HomeViewContoller.swift */,
+				1FE444E427A0313C006A364E /* Home */,
 				1FE444DE27A00ED9006A364E /* SearchTableViewController.swift */,
 				1FE444E027A00EEC006A364E /* FavoritesTableViewController.swift */,
 			);
@@ -82,6 +86,32 @@
 				1FE444D027A00B95006A364E /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		1FE444E427A0313C006A364E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				1FE444E527A03157006A364E /* Controllers */,
+				1FE444E827A03181006A364E /* Views */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		1FE444E527A03157006A364E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1FE444DC27A00EA8006A364E /* HomeViewContoller.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		1FE444E827A03181006A364E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1FE444E627A0317A006A364E /* NewsView.swift */,
+				1FE444E927A031FE006A364E /* NewsBoxView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,7 +185,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FE444DF27A00ED9006A364E /* SearchTableViewController.swift in Sources */,
+				1FE444E727A0317A006A364E /* NewsView.swift in Sources */,
 				1FE444E327A01272006A364E /* TabBarController.swift in Sources */,
+				1FE444EA27A031FE006A364E /* NewsBoxView.swift in Sources */,
 				1FE444CA27A00B91006A364E /* ViewController.swift in Sources */,
 				1FE444E127A00EEC006A364E /* FavoritesTableViewController.swift in Sources */,
 				1FE444C627A00B91006A364E /* AppDelegate.swift in Sources */,
