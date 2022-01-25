@@ -37,7 +37,7 @@ class NewsBoxView: UIView {
     
     required init?(coder aDecoder: NSCoder) {
         self.title = "Заголовок"
-        self.imageName = ""
+        self.imageName = "real-estate"
         super.init(coder: aDecoder)
         commonInit()
     }

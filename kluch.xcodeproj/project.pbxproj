@@ -16,7 +16,7 @@
 		1FE444DF27A00ED9006A364E /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE444DE27A00ED9006A364E /* SearchTableViewController.swift */; };
 		1FE444E127A00EEC006A364E /* FavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE444E027A00EEC006A364E /* FavoritesTableViewController.swift */; };
 		1FE444E327A01272006A364E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE444E227A01272006A364E /* TabBarController.swift */; };
-		1FE444E727A0317A006A364E /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE444E627A0317A006A364E /* NewsView.swift */; };
+		1FE444E727A0317A006A364E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE444E627A0317A006A364E /* HomeView.swift */; };
 		1FE444EA27A031FE006A364E /* NewsBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE444E927A031FE006A364E /* NewsBoxView.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,7 +32,7 @@
 		1FE444DE27A00ED9006A364E /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		1FE444E027A00EEC006A364E /* FavoritesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewController.swift; sourceTree = "<group>"; };
 		1FE444E227A01272006A364E /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		1FE444E627A0317A006A364E /* NewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsView.swift; sourceTree = "<group>"; };
+		1FE444E627A0317A006A364E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		1FE444E927A031FE006A364E /* NewsBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsBoxView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,7 +108,7 @@
 		1FE444E827A03181006A364E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1FE444E627A0317A006A364E /* NewsView.swift */,
+				1FE444E627A0317A006A364E /* HomeView.swift */,
 				1FE444E927A031FE006A364E /* NewsBoxView.swift */,
 			);
 			path = Views;
@@ -185,7 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FE444DF27A00ED9006A364E /* SearchTableViewController.swift in Sources */,
-				1FE444E727A0317A006A364E /* NewsView.swift in Sources */,
+				1FE444E727A0317A006A364E /* HomeView.swift in Sources */,
 				1FE444E327A01272006A364E /* TabBarController.swift in Sources */,
 				1FE444EA27A031FE006A364E /* NewsBoxView.swift in Sources */,
 				1FE444CA27A00B91006A364E /* ViewController.swift in Sources */,
