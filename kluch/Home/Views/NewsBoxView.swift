@@ -15,7 +15,7 @@ class NewsBoxView: UIView {
     private var label: UILabel = {
         let newsLabel = UILabel()
         newsLabel.numberOfLines = 0
-        newsLabel.font = UIFont.boldSystemFont(ofSize: 24)
+        newsLabel.font = UIFont.boldSystemFont(ofSize: 30)
         newsLabel.translatesAutoresizingMaskIntoConstraints = false
         return newsLabel
     }()
@@ -46,7 +46,8 @@ class NewsBoxView: UIView {
     //MARK: - Layouts
     private func commonInit() {
         translatesAutoresizingMaskIntoConstraints = false
-        layer.cornerRadius = 5
+        layer.cornerRadius = 50
+        layer.masksToBounds = true
         label.text = title
         imageView.image = UIImage(named: imageName)
         
@@ -55,9 +56,9 @@ class NewsBoxView: UIView {
         
         NSLayoutConstraint.activate([
             imageView.topAnchor.constraint(equalTo: topAnchor),
-            imageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+            imageView.trailingAnchor.constraint(equalTo: trailingAnchor),
             imageView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            imageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            imageView.leadingAnchor.constraint(equalTo: leadingAnchor),
             
             label.topAnchor.constraint(equalTo: topAnchor, constant: 50),
             label.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 5),

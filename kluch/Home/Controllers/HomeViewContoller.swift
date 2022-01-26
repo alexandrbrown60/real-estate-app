@@ -9,10 +9,10 @@ import UIKit
 
 class HomeViewController: UIViewController {
     //MARK: - Properties
-    private let newsPost = NewsBoxView(title: "Real estate", imageName: "real-estate")
-    private let secondPost = NewsBoxView(title: "Mortgage", imageName: "real-estate")
-    private let thirdPost = NewsBoxView(title: "Flats", imageName: "real-estate")
-    private let fourthPost = NewsBoxView(title: "Lands", imageName: "real-estate")
+    private let newsPost = NewsBoxView(title: "Квартиры", imageName: "real-estate")
+    private let secondPost = NewsBoxView(title: "Дома", imageName: "real-estate")
+    private let thirdPost = NewsBoxView(title: "Участки", imageName: "real-estate")
+    private let fourthPost = NewsBoxView(title: "Коммерция", imageName: "real-estate")
     
     private let scrollView = UIScrollView()
     private let stackView = UIStackView()
