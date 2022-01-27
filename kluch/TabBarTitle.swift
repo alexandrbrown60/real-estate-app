@@ -19,7 +19,7 @@ enum TabBar: String {
         case .home:
             viewController = HomeViewController()
         case .search:
-            viewController = SearchTableViewController()
+            viewController = SearchViewController()
         case .favorites:
             viewController = FavoritesTableViewController()
         }
