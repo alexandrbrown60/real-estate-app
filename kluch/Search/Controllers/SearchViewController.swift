@@ -45,6 +45,6 @@ class SearchViewController: UIViewController {
     }
     
     @objc func search(_ sender: UIButton) {
-        print("You are clicked!")
+        
     }
 }

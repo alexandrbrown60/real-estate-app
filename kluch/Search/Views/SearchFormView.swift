@@ -25,7 +25,7 @@ class SearchFormView: UIView {
     }()
     private let pickerData = RealEstate.allCases.map { $0.rawValue }
     
-    private let typeLabel: UITextField = {
+    internal let typeLabel: UITextField = {
        let label = UITextField()
         label.text = RealEstate.newFlat.rawValue
         return label
@@ -38,7 +38,7 @@ class SearchFormView: UIView {
         label.text = "Комнат:"
         return label
     }()
-    private let segmentedRoomControl: UISegmentedControl = {
+    internal let segmentedRoomControl: UISegmentedControl = {
         let rooms = ["1", "2", "3", "4"]
         let control = UISegmentedControl(items: rooms)
         control.selectedSegmentIndex = 0
@@ -59,13 +59,13 @@ class SearchFormView: UIView {
         label.text = "Цена:"
         return label
     }()
-    private let priceFrom: UITextField = {
+    internal let priceFrom: UITextField = {
        let textField = UITextField()
         textField.placeholder = "От"
         textField.borderStyle = .roundedRect
         return textField
     }()
-    private let priceTo: UITextField = {
+    internal let priceTo: UITextField = {
         let textField = UITextField()
          textField.placeholder = "До"
          textField.borderStyle = .roundedRect
