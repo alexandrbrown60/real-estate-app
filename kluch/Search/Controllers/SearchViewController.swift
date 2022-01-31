@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class SearchViewController: UIViewController {
     //MARK: - Properties
@@ -48,3 +49,4 @@ class SearchViewController: UIViewController {
         
     }
 }
+

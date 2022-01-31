@@ -146,6 +146,17 @@ class SearchFormView: UIView {
             mainStackView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
+    
+    func hideRoomsIfIsNotFlat() {
+        let selectedType = typeLabel.text
+        let newFlat = selectedType == RealEstate.newFlat.rawValue
+        let oldFlat = selectedType == RealEstate.oldFlat.rawValue
+        if newFlat || oldFlat {
+            roomStackView.isHidden = false
+        } else {
+            roomStackView.isHidden = true
+        }
+    }
 }
 
 //MARK: - PickerView extension
@@ -164,6 +175,7 @@ extension SearchFormView: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         typeLabel.text = pickerData[row]
+        hideRoomsIfIsNotFlat()
         typeLabel.resignFirstResponder()
     }
     

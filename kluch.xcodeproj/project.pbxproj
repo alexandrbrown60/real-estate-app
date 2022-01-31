@@ -154,7 +154,6 @@
 				5D443751E64CEF05F63923A1 /* Pods-kluch.debug.xcconfig */,
 				2F11A9EDD65BE9779C63F819 /* Pods-kluch.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
