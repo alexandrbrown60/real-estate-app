@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		078EA46ED619307490DB3331 /* Pods_kluch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D834DBC5F5A3462D78F0082D /* Pods_kluch.framework */; };
 		1F7D7CAF27A2C80400739784 /* SearchFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7D7CAE27A2C80400739784 /* SearchFormView.swift */; };
 		1F7D7CB127A2C85B00739784 /* SearchResultTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7D7CB027A2C85B00739784 /* SearchResultTableView.swift */; };
 		1FE444C627A00B91006A364E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE444C527A00B91006A364E /* AppDelegate.swift */; };
@@ -36,6 +37,9 @@
 		1FE444E027A00EEC006A364E /* FavoritesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewController.swift; sourceTree = "<group>"; };
 		1FE444E227A01272006A364E /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		1FE444E927A031FE006A364E /* NewsBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsBoxView.swift; sourceTree = "<group>"; };
+		2F11A9EDD65BE9779C63F819 /* Pods-kluch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kluch.release.xcconfig"; path = "Target Support Files/Pods-kluch/Pods-kluch.release.xcconfig"; sourceTree = "<group>"; };
+		5D443751E64CEF05F63923A1 /* Pods-kluch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kluch.debug.xcconfig"; path = "Target Support Files/Pods-kluch/Pods-kluch.debug.xcconfig"; sourceTree = "<group>"; };
+		D834DBC5F5A3462D78F0082D /* Pods_kluch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kluch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				078EA46ED619307490DB3331 /* Pods_kluch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +85,8 @@
 			children = (
 				1FE444C427A00B91006A364E /* kluch */,
 				1FE444C327A00B91006A364E /* Products */,
+				5FEB7CA305786147575DEB8E /* Pods */,
+				83BF5029381FDFEF853652D7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -141,6 +148,24 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		5FEB7CA305786147575DEB8E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5D443751E64CEF05F63923A1 /* Pods-kluch.debug.xcconfig */,
+				2F11A9EDD65BE9779C63F819 /* Pods-kluch.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		83BF5029381FDFEF853652D7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D834DBC5F5A3462D78F0082D /* Pods_kluch.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -148,9 +173,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1FE444D627A00B95006A364E /* Build configuration list for PBXNativeTarget "kluch" */;
 			buildPhases = (
+				CE149B25CA1B729CA4AAFBD4 /* [CP] Check Pods Manifest.lock */,
 				1FE444BE27A00B91006A364E /* Sources */,
 				1FE444BF27A00B91006A364E /* Frameworks */,
 				1FE444C027A00B91006A364E /* Resources */,
+				F6A1E1312042A8A8C7B6751F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -205,6 +232,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CE149B25CA1B729CA4AAFBD4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-kluch-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F6A1E1312042A8A8C7B6751F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-kluch/Pods-kluch-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-kluch/Pods-kluch-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-kluch/Pods-kluch-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1FE444BE27A00B91006A364E /* Sources */ = {
@@ -356,6 +425,7 @@
 		};
 		1FE444D727A00B95006A364E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D443751E64CEF05F63923A1 /* Pods-kluch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -384,6 +454,7 @@
 		};
 		1FE444D827A00B95006A364E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F11A9EDD65BE9779C63F819 /* Pods-kluch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
