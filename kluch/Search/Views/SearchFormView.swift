@@ -17,21 +17,31 @@ enum RealEstate: String, CaseIterable {
 
 class SearchFormView: UIView {
     //MARK: - Properties
-    private let typePicker = UIPickerView()
+    
+    //real estate type picker
+    private let typePicker: UIPickerView = {
+        let picker = UIPickerView()
+        return picker
+    }()
     private let pickerData = RealEstate.allCases.map { $0.rawValue }
     
-    private let singleRoom = RadioButton(title: "1")
-    private let twoRooms = RadioButton(title: "2")
-    private let threeRooms = RadioButton(title: "3")
-    private let fourRooms = RadioButton(title: "4")
-    private let roomButtonsStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.distribution = .fill
-        stackView.spacing = 8
-        return stackView
+    private let typeLabel: UITextField = {
+       let label = UITextField()
+        label.text = RealEstate.newFlat.rawValue
+        return label
     }()
     
+    
+    //appartment rooms number choosing
+    private let segmentedRoomControl: UISegmentedControl = {
+        let rooms = ["1", "2", "3", "4"]
+        let control = UISegmentedControl(items: rooms)
+        control.selectedSegmentIndex = 0
+        control.addTarget(self, action: #selector(SearchViewController.roomDidChange), for: .valueChanged)
+        return control
+    }()
+    
+    //price input
     private let priceFrom = UITextField()
     private let priceTo = UITextField()
     private let priceFieldsStackView: UIStackView = {
@@ -42,6 +52,7 @@ class SearchFormView: UIView {
         return stackView
     }()
     
+    //search button
     private let searchButton: UIButton = {
        let button = UIButton()
         button.setTitle("Поиск", for: .normal)
@@ -71,15 +82,7 @@ class SearchFormView: UIView {
     }
     
     //MARK: - Layouts
-    private func setupButtonsStackView() {
-        roomButtonsStackView.addArrangedSubview(singleRoom)
-        roomButtonsStackView.addArrangedSubview(twoRooms)
-        roomButtonsStackView.addArrangedSubview(threeRooms)
-        roomButtonsStackView.addArrangedSubview(fourRooms)
-        
-        roomButtonsStackView.translatesAutoresizingMaskIntoConstraints = false
-    }
-    
+
     private func setupPriceFieldsStackView() {
         priceFieldsStackView.addArrangedSubview(priceFrom)
         priceFieldsStackView.addArrangedSubview(priceTo)
@@ -88,11 +91,11 @@ class SearchFormView: UIView {
     }
     
     private func setupMainStackView() {
-        setupButtonsStackView()
         setupPriceFieldsStackView()
-        
-        mainStackView.addArrangedSubview(typePicker)
-        mainStackView.addArrangedSubview(roomButtonsStackView)
+        typeLabel.inputView = typePicker
+        segmentedRoomControl.translatesAutoresizingMaskIntoConstraints = false
+        mainStackView.addArrangedSubview(typeLabel)
+        mainStackView.addArrangedSubview(segmentedRoomControl)
         mainStackView.addArrangedSubview(priceFieldsStackView)
         mainStackView.addArrangedSubview(searchButton)
         
@@ -124,7 +127,8 @@ extension SearchFormView: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        print(pickerData[row])
+        typeLabel.text = pickerData[row]
+        typeLabel.resignFirstResponder()
     }
     
 }

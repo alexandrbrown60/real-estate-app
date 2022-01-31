@@ -29,4 +29,18 @@ class SearchViewController: UIViewController {
             searchForm.bottomAnchor.constraint(lessThanOrEqualTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
+    
+    //MARK: - Functions
+    @objc func roomDidChange(_ control: UISegmentedControl) {
+        switch control.selectedSegmentIndex {
+        case 0:
+            print(1)
+        case 1:
+            print(2)
+        case 2:
+            print(3)
+        default:
+            print(4)
+        }
+    }
 }
