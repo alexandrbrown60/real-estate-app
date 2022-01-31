@@ -23,8 +23,8 @@ class SearchViewController: UIViewController {
         view.addSubview(searchForm)
         
         NSLayoutConstraint.activate([
-            searchForm.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            searchForm.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            searchForm.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+            searchForm.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
             searchForm.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             searchForm.bottomAnchor.constraint(lessThanOrEqualTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
@@ -42,5 +42,9 @@ class SearchViewController: UIViewController {
         default:
             print(4)
         }
+    }
+    
+    @objc func search(_ sender: UIButton) {
+        print("You are clicked!")
     }
 }

@@ -8,11 +8,11 @@
 import UIKit
 
 enum RealEstate: String, CaseIterable {
-    case newFlat = "квартира вторичка"
-    case oldFlat = "квартира новостройка"
-    case house = "дом"
-    case land = "участок"
-    case commercial = "коммерческая недвижимость"
+    case newFlat = "Квартира вторичка"
+    case oldFlat = "Квартира новостройка"
+    case house = "Дом"
+    case land = "Участок"
+    case commercial = "Коммерческая недвижимость"
 }
 
 class SearchFormView: UIView {
@@ -33,6 +33,11 @@ class SearchFormView: UIView {
     
     
     //appartment rooms number choosing
+    private let roomsLabel: UILabel = {
+       let label = UILabel()
+        label.text = "Комнат:"
+        return label
+    }()
     private let segmentedRoomControl: UISegmentedControl = {
         let rooms = ["1", "2", "3", "4"]
         let control = UISegmentedControl(items: rooms)
@@ -40,14 +45,36 @@ class SearchFormView: UIView {
         control.addTarget(self, action: #selector(SearchViewController.roomDidChange), for: .valueChanged)
         return control
     }()
+    private let roomStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.distribution = .fillProportionally
+        stackView.spacing = 8
+        return stackView
+    }()
     
     //price input
-    private let priceFrom = UITextField()
-    private let priceTo = UITextField()
+    private let priceLabel: UILabel = {
+       let label = UILabel()
+        label.text = "Цена:"
+        return label
+    }()
+    private let priceFrom: UITextField = {
+       let textField = UITextField()
+        textField.placeholder = "От"
+        textField.borderStyle = .roundedRect
+        return textField
+    }()
+    private let priceTo: UITextField = {
+        let textField = UITextField()
+         textField.placeholder = "До"
+         textField.borderStyle = .roundedRect
+         return textField
+     }()
     private let priceFieldsStackView: UIStackView = {
        let stackView = UIStackView()
         stackView.axis = .horizontal
-        stackView.distribution = .fillEqually
+        stackView.distribution = .fillProportionally
         stackView.spacing = 8
         return stackView
     }()
@@ -56,7 +83,9 @@ class SearchFormView: UIView {
     private let searchButton: UIButton = {
        let button = UIButton()
         button.setTitle("Поиск", for: .normal)
-        button.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
+        button.backgroundColor = .systemBlue
+        button.layer.cornerRadius = 5
+        button.addTarget(self, action: #selector(SearchViewController.search(_:)), for: .touchUpInside)
         return button
     }()
     
@@ -82,8 +111,14 @@ class SearchFormView: UIView {
     }
     
     //MARK: - Layouts
-
+    private func setupRoomsPicker() {
+        roomStackView.addArrangedSubview(roomsLabel)
+        roomStackView.addArrangedSubview(segmentedRoomControl)
+        roomStackView.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
     private func setupPriceFieldsStackView() {
+        priceFieldsStackView.addArrangedSubview(priceLabel)
         priceFieldsStackView.addArrangedSubview(priceFrom)
         priceFieldsStackView.addArrangedSubview(priceTo)
         
@@ -91,11 +126,12 @@ class SearchFormView: UIView {
     }
     
     private func setupMainStackView() {
+        setupRoomsPicker()
         setupPriceFieldsStackView()
         typeLabel.inputView = typePicker
-        segmentedRoomControl.translatesAutoresizingMaskIntoConstraints = false
+        
         mainStackView.addArrangedSubview(typeLabel)
-        mainStackView.addArrangedSubview(segmentedRoomControl)
+        mainStackView.addArrangedSubview(roomStackView)
         mainStackView.addArrangedSubview(priceFieldsStackView)
         mainStackView.addArrangedSubview(searchButton)
         
