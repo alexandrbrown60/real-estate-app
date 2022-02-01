@@ -46,7 +46,9 @@ class SearchViewController: UIViewController {
     }
     
     @objc func search(_ sender: UIButton) {
-        
+        AF.request("https://kluch.me/kluch_metrics/getObjects.php").responseDecodable(of: PropertyList.self) { data in
+            print(data)
+        }
     }
 }
 

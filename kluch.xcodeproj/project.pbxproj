@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		078EA46ED619307490DB3331 /* Pods_kluch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D834DBC5F5A3462D78F0082D /* Pods_kluch.framework */; };
+		1F770A5527A98F1700DDB7D2 /* PropertyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F770A5427A98F1700DDB7D2 /* PropertyList.swift */; };
 		1F7D7CAF27A2C80400739784 /* SearchFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7D7CAE27A2C80400739784 /* SearchFormView.swift */; };
 		1F7D7CB127A2C85B00739784 /* SearchResultTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7D7CB027A2C85B00739784 /* SearchResultTableView.swift */; };
 		1FE444C627A00B91006A364E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE444C527A00B91006A364E /* AppDelegate.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F770A5427A98F1700DDB7D2 /* PropertyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyList.swift; sourceTree = "<group>"; };
 		1F7D7CAE27A2C80400739784 /* SearchFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFormView.swift; sourceTree = "<group>"; };
 		1F7D7CB027A2C85B00739784 /* SearchResultTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableView.swift; sourceTree = "<group>"; };
 		1FE444C227A00B91006A364E /* kluch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kluch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,11 +56,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F770A5627A98F1C00DDB7D2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1F770A5427A98F1700DDB7D2 /* PropertyList.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		1F7D7CAC27A2C7DF00739784 /* Search */ = {
 			isa = PBXGroup;
 			children = (
 				1F7D7CAD27A2C7EC00739784 /* Controllers */,
 				1F7D7CB227A2C8CA00739784 /* Views */,
+				1F770A5627A98F1C00DDB7D2 /* Model */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -281,6 +292,7 @@
 			files = (
 				1FE444DF27A00ED9006A364E /* SearchViewController.swift in Sources */,
 				1FE444E327A01272006A364E /* TabBarController.swift in Sources */,
+				1F770A5527A98F1700DDB7D2 /* PropertyList.swift in Sources */,
 				1FE444EA27A031FE006A364E /* NewsBoxView.swift in Sources */,
 				1FE444CA27A00B91006A364E /* ViewController.swift in Sources */,
 				1F7D7CAF27A2C80400739784 /* SearchFormView.swift in Sources */,
