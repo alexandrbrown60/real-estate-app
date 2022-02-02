@@ -46,11 +46,12 @@ class SearchViewController: UIViewController {
     }
     
     @objc func search(_ sender: UIButton) {
-        let fields = SearchFields(id: 1530, value: "Наша база")
-        let params = SearchParameters(type: 2, fields: [fields])
-        AF.request("https://kluch.me/kluch_metrics/getObjects.php", method: .post, parameters: params).responseDecodable(of: PropertyList.self) { data in
-            print(data)
-        }
+   
+//        let fields = SearchFields(id: 1530, value: "Наша база")
+//        let params = SearchParameters(type: 2, fields: [fields])
+//        AF.request("https://kluch.me/kluch_metrics/getObjects.php", method: .post, parameters: params).responseDecodable(of: PropertyList.self) { data in
+//            print(data)
+//        }
     }
 }
 

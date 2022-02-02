@@ -102,6 +102,8 @@ class SearchFormView: UIView {
         super.init(frame: .zero)
         typePicker.delegate = self
         typePicker.dataSource = self
+        priceFrom.delegate = self
+        priceTo.delegate = self
         translatesAutoresizingMaskIntoConstraints = false
         setupMainStackView()
     }
@@ -179,4 +181,12 @@ extension SearchFormView: UIPickerViewDelegate, UIPickerViewDataSource {
         typeLabel.resignFirstResponder()
     }
     
+}
+
+//MARK: - UITextField delegate
+extension SearchFormView: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.endEditing(true)
+        return true
+    }
 }
