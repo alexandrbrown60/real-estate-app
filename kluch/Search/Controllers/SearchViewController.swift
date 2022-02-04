@@ -11,23 +11,39 @@ import Alamofire
 class SearchViewController: UIViewController {
     //MARK: - Properties
     private let searchForm = SearchFormView()
+    private let tableView = SearchResultTableView()
+    private let cellId = "Cell"
+    
+    var properties: [PropertyModel] = [PropertyModel]()
     
     //MARK: - Initializer
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
         view.backgroundColor = .white
-        setupSearchForm()
+        createProperties()
+        tableView.register(ResultTableViewCell.self, forCellReuseIdentifier: cellId)
+        setupViews()
     }
     
     //MARK: - Layouts
-    private func setupSearchForm() {
+    private func setupViews() {
         view.addSubview(searchForm)
+        view.addSubview(tableView)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.backgroundColor = .systemBlue
         
         NSLayoutConstraint.activate([
             searchForm.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
             searchForm.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
             searchForm.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            searchForm.bottomAnchor.constraint(lessThanOrEqualTo: view.safeAreaLayoutGuide.bottomAnchor)
+            
+            tableView.topAnchor.constraint(equalTo: searchForm.bottomAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            
         ])
     }
     
@@ -53,5 +69,28 @@ class SearchViewController: UIViewController {
 //            print(data)
 //        }
     }
+    
+    @objc func like(_ sender: UIButton) {
+        print("Property liked")
+    }
+    
+    func createProperties() {
+        properties.append(PropertyModel(propertyId: 1, image: UIImage(named: "real-estate")!, title: "2-ком, 45 м2, 2 эт", description: "Советский р-н", price: "4 500 000 р"))
+    }
 }
-
+//MARK: - TableView delegate
+extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return properties.count
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: self.cellId, for: indexPath) as! ResultTableViewCell
+        cell.property = properties[indexPath.row]
+        return cell
+    }
+    
+    
+}
