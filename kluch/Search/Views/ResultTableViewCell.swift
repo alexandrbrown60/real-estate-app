@@ -61,16 +61,16 @@ class ResultTableViewCell: UITableViewCell {
     private let textStackView: UIStackView = {
        let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.distribution = .fill
+        stackView.distribution = .fillEqually
         stackView.axis = .vertical
-        stackView.spacing = 8
+        stackView.spacing = 5
         return stackView
     }()
     
     private let mainStackView: UIStackView = {
        let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.distribution = .fillProportionally
+        stackView.distribution = .fill
         stackView.axis = .horizontal
         stackView.spacing = 8
         return stackView
@@ -112,6 +112,7 @@ class ResultTableViewCell: UITableViewCell {
         mainStackView.addArrangedSubview(likeButton)
         
         NSLayoutConstraint.activate([
+            propertyImageView.widthAnchor.constraint(equalToConstant: 130),
             mainStackView.topAnchor.constraint(equalTo: contentView.topAnchor),
             mainStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             mainStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),

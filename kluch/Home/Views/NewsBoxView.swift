@@ -16,6 +16,7 @@ class NewsBoxView: UIView {
         let newsLabel = UILabel()
         newsLabel.numberOfLines = 0
         newsLabel.font = UIFont.boldSystemFont(ofSize: 30)
+        newsLabel.textColor = .white
         newsLabel.translatesAutoresizingMaskIntoConstraints = false
         return newsLabel
     }()

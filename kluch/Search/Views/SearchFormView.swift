@@ -145,7 +145,7 @@ class SearchFormView: UIView {
             mainStackView.leadingAnchor.constraint(equalTo: leadingAnchor),
             mainStackView.trailingAnchor.constraint(equalTo: trailingAnchor),
             mainStackView.topAnchor.constraint(equalTo: topAnchor),
-            mainStackView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            mainStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20)
         ])
     }
     

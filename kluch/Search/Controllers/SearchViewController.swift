@@ -33,6 +33,7 @@ class SearchViewController: UIViewController {
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.backgroundColor = .systemBlue
+        tableView.rowHeight = 100
         
         NSLayoutConstraint.activate([
             searchForm.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
