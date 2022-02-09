@@ -6,15 +6,16 @@
 //
 
 import UIKit
+import Alamofire
 
 class ResultTableViewCell: UITableViewCell {
     //MARK: - Properties
     var property: PropertyModel? {
         didSet {
-            propertyImageView.image = property?.image
             propertyLabel.text = property?.title
             propertyDescription.text = property?.description
             propertyPrice.text = property?.price
+            loadImage(from: property?.imageUrl)
         }
     }
     
@@ -30,6 +31,7 @@ class ResultTableViewCell: UITableViewCell {
        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
+        label.font = UIFont.boldSystemFont(ofSize: 18)
         label.numberOfLines = 1
         return label
     }()
@@ -53,7 +55,9 @@ class ResultTableViewCell: UITableViewCell {
     let likeButton: UIButton = {
        let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Like", for: .normal)
+        button.setImage(UIImage(systemName: "heart"), for: .normal)
+        button.setImage(UIImage(systemName: "heart.fill"), for: .selected)
+        button.tintColor = .red
         button.addTarget(self, action: #selector(SearchViewController.like(_:)), for: .touchUpInside)
         return button
     }()
@@ -61,7 +65,7 @@ class ResultTableViewCell: UITableViewCell {
     private let textStackView: UIStackView = {
        let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.distribution = .fillEqually
+        stackView.distribution = .fillProportionally
         stackView.axis = .vertical
         stackView.spacing = 5
         return stackView
@@ -118,6 +122,20 @@ class ResultTableViewCell: UITableViewCell {
             mainStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             mainStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
+    }
+    
+    private func loadImage(from url: String?) {
+        guard let imageUrl = url else {
+            fatalError("No image")
+        }
+        AF.request(imageUrl, method: .get).responseData { data in
+            switch data.result {
+            case .success(let image):
+                self.propertyImageView.image = UIImage(data: image, scale: 1)
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 
 }

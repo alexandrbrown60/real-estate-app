@@ -25,6 +25,15 @@ enum FieldValueType: Decodable {
         throw FieldValueTypeError.missingValue
     }
     
+    func get() -> Any {
+        switch self {
+        case .string(let value):
+            return value
+        case .location(let value):
+            return value
+        }
+    }
+    
     
     enum FieldValueTypeError: Error {
         case missingValue
@@ -39,7 +48,6 @@ struct PropertyList: Decodable {
 
 struct Property: Decodable {
     let id: String
-    let date_add: String
     let fields: [PropertyFields]
 }
 

@@ -13,6 +13,7 @@ class SearchViewController: UIViewController {
     private let searchForm = SearchFormView()
     private let tableView = SearchResultTableView()
     private let cellId = "Cell"
+    private var selectedRoom: Int = 0
     
     var properties: [PropertyModel] = [PropertyModel]()
     
@@ -21,8 +22,9 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.allowsSelection = false
         view.backgroundColor = .white
-        createProperties()
+
         tableView.register(ResultTableViewCell.self, forCellReuseIdentifier: cellId)
         setupViews()
     }
@@ -52,32 +54,49 @@ class SearchViewController: UIViewController {
     @objc func roomDidChange(_ control: UISegmentedControl) {
         switch control.selectedSegmentIndex {
         case 0:
-            print(1)
+            self.selectedRoom = 1
         case 1:
-            print(2)
+            self.selectedRoom = 2
         case 2:
-            print(3)
+            self.selectedRoom = 3
+        case 3:
+            self.selectedRoom = 4
         default:
-            print(4)
+            self.selectedRoom = 1
+        }
+        print(selectedRoom)
+    }
+    
+    //make request by triggering Search button
+    @objc func search(_ sender: UIButton) {
+        self.properties.removeAll()
+        
+        let source = SearchField(id: 1522, value: "Наша база")
+        let rooms = SearchField(id: 446, value: String(self.selectedRoom))
+        let params = SearchParameters(type: 1, fields: [source, rooms])
+        
+        AF.request("https://kluch.me/kluch_metrics/getObjects.php", method: .post, parameters: params).validate().responseDecodable(of: PropertyList.self) { data in
+            switch data.result {
+            case .success(let value):
+
+                for property in value.list {
+                    let propertyModel = PropertyModel(buildOnBase: property)
+                    self.properties.append(propertyModel)
+                }
+                
+                self.tableView.reloadData()
+                
+            case .failure(let error):
+                print(error)
+            }
         }
     }
     
-    @objc func search(_ sender: UIButton) {
-   
-//        let fields = SearchFields(id: 1530, value: "Наша база")
-//        let params = SearchParameters(type: 2, fields: [fields])
-//        AF.request("https://kluch.me/kluch_metrics/getObjects.php", method: .post, parameters: params).responseDecodable(of: PropertyList.self) { data in
-//            print(data)
-//        }
-    }
-    
+    //like or dislike property
     @objc func like(_ sender: UIButton) {
-        print("Property liked")
+        sender.isSelected = true
     }
     
-    func createProperties() {
-        properties.append(PropertyModel(propertyId: 1, image: UIImage(named: "real-estate")!, title: "2-ком, 45 м2, 2 эт", description: "Советский р-н", price: "4 500 000 р"))
-    }
 }
 //MARK: - TableView delegate
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {

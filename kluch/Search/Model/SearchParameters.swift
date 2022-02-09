@@ -9,10 +9,10 @@ import Foundation
 
 struct SearchParameters: Encodable {
     let type: Int
-    let fields: [SearchFields]
+    let fields: [SearchField]
 }
 
-struct SearchFields: Encodable {
+struct SearchField: Encodable {
     let id: Int
     let value: String
 }
