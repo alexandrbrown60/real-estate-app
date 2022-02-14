@@ -31,7 +31,7 @@ class ResultTableViewCell: UITableViewCell {
        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
-        label.font = UIFont.boldSystemFont(ofSize: 18)
+        label.font = UIFont.boldSystemFont(ofSize: 16)
         label.numberOfLines = 1
         return label
     }()
@@ -74,7 +74,7 @@ class ResultTableViewCell: UITableViewCell {
     private let mainStackView: UIStackView = {
        let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.distribution = .fill
+        stackView.distribution = .fillProportionally
         stackView.axis = .horizontal
         stackView.spacing = 8
         return stackView

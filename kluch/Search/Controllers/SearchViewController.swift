@@ -71,17 +71,22 @@ class SearchViewController: UIViewController {
     @objc func search(_ sender: UIButton) {
         self.properties.removeAll()
         
+        //Build search params
         let source = SearchField(id: 1522, value: "Наша база")
         let rooms = SearchField(id: 446, value: String(self.selectedRoom))
         let params = SearchParameters(type: 1, fields: [source, rooms])
         
-        AF.request("https://kluch.me/kluch_metrics/getObjects.php", method: .post, parameters: params).validate().responseDecodable(of: PropertyList.self) { data in
+        //Make request
+        AF.request(Constans.getObjects, method: .post, parameters: params).validate().responseDecodable(of: PropertyList.self) { data in
             switch data.result {
             case .success(let value):
-
+                //Sorting results
                 for property in value.list {
-                    let propertyModel = PropertyModel(buildOnBase: property)
+                    
+                    //Create propertys with factory
+                    let propertyModel = PropertyFactory.defaultFactory.createProperty(ofType: .apartment, onBase: property)
                     self.properties.append(propertyModel)
+                    
                 }
                 
                 self.tableView.reloadData()

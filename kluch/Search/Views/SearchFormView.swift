@@ -7,14 +7,6 @@
 
 import UIKit
 
-enum RealEstate: String, CaseIterable {
-    case newFlat = "Квартира вторичка"
-    case oldFlat = "Квартира новостройка"
-    case house = "Дом"
-    case land = "Участок"
-    case commercial = "Коммерческая недвижимость"
-}
-
 class SearchFormView: UIView {
     //MARK: - Properties
     
