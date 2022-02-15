@@ -52,38 +52,33 @@ class SearchViewController: UIViewController {
     
     //MARK: - Functions
     @objc func roomDidChange(_ control: UISegmentedControl) {
-        switch control.selectedSegmentIndex {
-        case 0:
-            self.selectedRoom = 1
-        case 1:
-            self.selectedRoom = 2
-        case 2:
-            self.selectedRoom = 3
-        case 3:
-            self.selectedRoom = 4
-        default:
-            self.selectedRoom = 1
-        }
-        print(selectedRoom)
+        self.selectedRoom = control.selectedSegmentIndex + 1
     }
     
     //make request by triggering Search button
     @objc func search(_ sender: UIButton) {
         self.properties.removeAll()
         
+        //Data capture
+        let type = searchForm.typeLabel.text
+        let priceFrom = searchForm.priceFrom.text
+        let priceTo = searchForm.priceTo.text
+        
         //Build search params
-        let source = SearchField(id: 1522, value: "Наша база")
-        let rooms = SearchField(id: 446, value: String(self.selectedRoom))
-        let params = SearchParameters(type: 1, fields: [source, rooms])
+        let paramsBuilder = SearchParamsBuilder(type: type!, rooms: self.selectedRoom, priceFrom: priceFrom, priceTo: priceTo)
+        let params = paramsBuilder.build()
         
         //Make request
         AF.request(Constans.getObjects, method: .post, parameters: params).validate().responseDecodable(of: PropertyList.self) { data in
+            
+            //validate result
             switch data.result {
+                
             case .success(let value):
                 //Sorting results
                 for property in value.list {
                     
-                    //Create propertys with factory
+                    //Create properties with factory
                     let propertyModel = PropertyFactory.defaultFactory.createProperty(ofType: .apartment, onBase: property)
                     self.properties.append(propertyModel)
                     
@@ -101,6 +96,8 @@ class SearchViewController: UIViewController {
     @objc func like(_ sender: UIButton) {
         sender.isSelected = true
     }
+    
+
     
 }
 //MARK: - TableView delegate

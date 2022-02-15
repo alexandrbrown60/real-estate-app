@@ -16,6 +16,7 @@
 		1F0F358A27BA953700A71DD6 /* PropertyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0F358927BA953700A71DD6 /* PropertyFactory.swift */; };
 		1F319FF127ABD25100C6BABC /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F319FF027ABD25100C6BABC /* ResultTableViewCell.swift */; };
 		1F319FF327ABE46200C6BABC /* PropertyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F319FF227ABE46200C6BABC /* PropertyModel.swift */; };
+		1F380DAC27BBCB7A00D9F678 /* SearchParamsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F380DAB27BBCB7A00D9F678 /* SearchParamsBuilder.swift */; };
 		1F770A5527A98F1700DDB7D2 /* PropertyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F770A5427A98F1700DDB7D2 /* PropertyList.swift */; };
 		1F7A7C6A27AA811C00ADB332 /* SearchParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7A7C6927AA811C00ADB332 /* SearchParameters.swift */; };
 		1F7D7CAF27A2C80400739784 /* SearchFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7D7CAE27A2C80400739784 /* SearchFormView.swift */; };
@@ -40,6 +41,7 @@
 		1F0F358927BA953700A71DD6 /* PropertyFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyFactory.swift; sourceTree = "<group>"; };
 		1F319FF027ABD25100C6BABC /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
 		1F319FF227ABE46200C6BABC /* PropertyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyModel.swift; sourceTree = "<group>"; };
+		1F380DAB27BBCB7A00D9F678 /* SearchParamsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchParamsBuilder.swift; sourceTree = "<group>"; };
 		1F770A5427A98F1700DDB7D2 /* PropertyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyList.swift; sourceTree = "<group>"; };
 		1F7A7C6927AA811C00ADB332 /* SearchParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchParameters.swift; sourceTree = "<group>"; };
 		1F7D7CAE27A2C80400739784 /* SearchFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFormView.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				1F770A5427A98F1700DDB7D2 /* PropertyList.swift */,
 				1F7A7C6927AA811C00ADB332 /* SearchParameters.swift */,
 				1F0F358527BA67E600A71DD6 /* RealEstate.swift */,
+				1F380DAB27BBCB7A00D9F678 /* SearchParamsBuilder.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				1F7A7C6A27AA811C00ADB332 /* SearchParameters.swift in Sources */,
 				1F0F358427BA674E00A71DD6 /* Apartment.swift in Sources */,
 				1FE444EA27A031FE006A364E /* NewsBoxView.swift in Sources */,
+				1F380DAC27BBCB7A00D9F678 /* SearchParamsBuilder.swift in Sources */,
 				1F7D7CAF27A2C80400739784 /* SearchFormView.swift in Sources */,
 				1FE444E127A00EEC006A364E /* FavoritesTableViewController.swift in Sources */,
 				1FE444C627A00B91006A364E /* AppDelegate.swift in Sources */,
