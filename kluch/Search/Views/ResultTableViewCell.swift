@@ -128,12 +128,14 @@ class ResultTableViewCell: UITableViewCell {
         guard let imageUrl = url else {
             fatalError("No image")
         }
-        AF.request(imageUrl, method: .get).responseData { data in
-            switch data.result {
-            case .success(let image):
-                self.propertyImageView.image = UIImage(data: image, scale: 1)
-            case .failure(let error):
-                print(error)
+        let url = URL(string: imageUrl)!
+        let queue = DispatchQueue.global(qos: .utility)
+        
+        queue.async {
+            if let data = try? Data(contentsOf: url) {
+                DispatchQueue.main.async {
+                    self.propertyImageView.image = UIImage(data: data, scale: 1)
+                }
             }
         }
     }
