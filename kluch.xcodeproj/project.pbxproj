@@ -17,10 +17,15 @@
 		1F319FF127ABD25100C6BABC /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F319FF027ABD25100C6BABC /* ResultTableViewCell.swift */; };
 		1F319FF327ABE46200C6BABC /* PropertyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F319FF227ABE46200C6BABC /* PropertyModel.swift */; };
 		1F380DAC27BBCB7A00D9F678 /* SearchParamsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F380DAB27BBCB7A00D9F678 /* SearchParamsBuilder.swift */; };
+		1F67281D27CE3C3400FCF07F /* PropertyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F67281C27CE3C3400FCF07F /* PropertyViewController.swift */; };
+		1F67282027CE631300FCF07F /* PropertyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F67281F27CE631300FCF07F /* PropertyView.swift */; };
+		1F67282327CE76A700FCF07F /* ImageCarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F67282227CE76A700FCF07F /* ImageCarouselCell.swift */; };
 		1F770A5527A98F1700DDB7D2 /* PropertyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F770A5427A98F1700DDB7D2 /* PropertyList.swift */; };
 		1F7A7C6A27AA811C00ADB332 /* SearchParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7A7C6927AA811C00ADB332 /* SearchParameters.swift */; };
 		1F7D7CAF27A2C80400739784 /* SearchFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7D7CAE27A2C80400739784 /* SearchFormView.swift */; };
 		1F7D7CB127A2C85B00739784 /* SearchResultTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7D7CB027A2C85B00739784 /* SearchResultTableView.swift */; };
+		1FCF486427CF6F080070C67B /* PropertyText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCF486327CF6F080070C67B /* PropertyText.swift */; };
+		1FCF486627CF79270070C67B /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCF486527CF79270070C67B /* LikeButton.swift */; };
 		1FE444C627A00B91006A364E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE444C527A00B91006A364E /* AppDelegate.swift */; };
 		1FE444CF27A00B95006A364E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FE444CE27A00B95006A364E /* Assets.xcassets */; };
 		1FE444D227A00B95006A364E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FE444D027A00B95006A364E /* LaunchScreen.storyboard */; };
@@ -42,10 +47,15 @@
 		1F319FF027ABD25100C6BABC /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
 		1F319FF227ABE46200C6BABC /* PropertyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyModel.swift; sourceTree = "<group>"; };
 		1F380DAB27BBCB7A00D9F678 /* SearchParamsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchParamsBuilder.swift; sourceTree = "<group>"; };
+		1F67281C27CE3C3400FCF07F /* PropertyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyViewController.swift; sourceTree = "<group>"; };
+		1F67281F27CE631300FCF07F /* PropertyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyView.swift; sourceTree = "<group>"; };
+		1F67282227CE76A700FCF07F /* ImageCarouselCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCarouselCell.swift; sourceTree = "<group>"; };
 		1F770A5427A98F1700DDB7D2 /* PropertyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyList.swift; sourceTree = "<group>"; };
 		1F7A7C6927AA811C00ADB332 /* SearchParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchParameters.swift; sourceTree = "<group>"; };
 		1F7D7CAE27A2C80400739784 /* SearchFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFormView.swift; sourceTree = "<group>"; };
 		1F7D7CB027A2C85B00739784 /* SearchResultTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableView.swift; sourceTree = "<group>"; };
+		1FCF486327CF6F080070C67B /* PropertyText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyText.swift; sourceTree = "<group>"; };
+		1FCF486527CF79270070C67B /* LikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
 		1FE444C227A00B91006A364E /* kluch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kluch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FE444C527A00B91006A364E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FE444CE27A00B95006A364E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -112,6 +122,24 @@
 			path = Property;
 			sourceTree = "<group>";
 		};
+		1F67281E27CE607100FCF07F /* Property */ = {
+			isa = PBXGroup;
+			children = (
+				1FCF486227CF6EA60070C67B /* Controller */,
+				1F67282127CE631E00FCF07F /* View */,
+			);
+			path = Property;
+			sourceTree = "<group>";
+		};
+		1F67282127CE631E00FCF07F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1F67281F27CE631300FCF07F /* PropertyView.swift */,
+				1F67282227CE76A700FCF07F /* ImageCarouselCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		1F770A5627A98F1C00DDB7D2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +179,23 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		1FCF486227CF6EA60070C67B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1F67281C27CE3C3400FCF07F /* PropertyViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1FCF486727CF7AF80070C67B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1FCF486327CF6F080070C67B /* PropertyText.swift */,
+				1FCF486527CF79270070C67B /* LikeButton.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		1FE444B927A00B91006A364E = {
 			isa = PBXGroup;
 			children = (
@@ -176,11 +221,13 @@
 				1FE444CE27A00B95006A364E /* Assets.xcassets */,
 				1FE444D927A00D2E006A364E /* Supporting files */,
 				1FE444D327A00B95006A364E /* Info.plist */,
+				1FCF486727CF7AF80070C67B /* View */,
+				1F0F358127BA672300A71DD6 /* Model */,
 				1F0F357827BA5F3C00A71DD6 /* TabBar */,
 				1FE444E427A0313C006A364E /* Home */,
 				1F7D7CAC27A2C7DF00739784 /* Search */,
 				1F0F357927BA5F4C00A71DD6 /* Favorites */,
-				1F0F358127BA672300A71DD6 /* Model */,
+				1F67281E27CE607100FCF07F /* Property */,
 			);
 			path = kluch;
 			sourceTree = "<group>";
@@ -356,6 +403,8 @@
 				1FE444E327A01272006A364E /* TabBarController.swift in Sources */,
 				1F770A5527A98F1700DDB7D2 /* PropertyList.swift in Sources */,
 				1F7A7C6A27AA811C00ADB332 /* SearchParameters.swift in Sources */,
+				1F67282327CE76A700FCF07F /* ImageCarouselCell.swift in Sources */,
+				1F67281D27CE3C3400FCF07F /* PropertyViewController.swift in Sources */,
 				1F0F358427BA674E00A71DD6 /* Apartment.swift in Sources */,
 				1FE444EA27A031FE006A364E /* NewsBoxView.swift in Sources */,
 				1F380DAC27BBCB7A00D9F678 /* SearchParamsBuilder.swift in Sources */,
@@ -363,10 +412,13 @@
 				1FE444E127A00EEC006A364E /* FavoritesTableViewController.swift in Sources */,
 				1FE444C627A00B91006A364E /* AppDelegate.swift in Sources */,
 				1F319FF127ABD25100C6BABC /* ResultTableViewCell.swift in Sources */,
+				1F67282027CE631300FCF07F /* PropertyView.swift in Sources */,
 				1F0F358027BA66FE00A71DD6 /* Commercial.swift in Sources */,
+				1FCF486627CF79270070C67B /* LikeButton.swift in Sources */,
 				1FE444DB27A00DF9006A364E /* TabBarTitle.swift in Sources */,
 				1F7D7CB127A2C85B00739784 /* SearchResultTableView.swift in Sources */,
 				1FE444DD27A00EA8006A364E /* HomeViewContoller.swift in Sources */,
+				1FCF486427CF6F080070C67B /* PropertyText.swift in Sources */,
 				1F0F358627BA67E600A71DD6 /* RealEstate.swift in Sources */,
 				1F0F358827BA6B3400A71DD6 /* Constants.swift in Sources */,
 			);

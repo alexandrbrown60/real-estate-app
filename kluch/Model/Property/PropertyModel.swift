@@ -13,6 +13,7 @@ protocol PropertyModel {
     var title: String {get set}
     var description: String {get set}
     var price: String {get set}
+    var address: String {get set}
     
     func getFields(_ fields: [PropertyFields])
     

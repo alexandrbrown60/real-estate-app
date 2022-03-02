@@ -22,7 +22,6 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.allowsSelection = false
         view.backgroundColor = .white
 
         tableView.register(ResultTableViewCell.self, forCellReuseIdentifier: cellId)
@@ -107,6 +106,11 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         return properties.count
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("Yo!")
+        let vc = PropertyViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: self.cellId, for: indexPath) as! ResultTableViewCell

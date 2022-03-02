@@ -6,14 +6,13 @@
 //
 
 import UIKit
-import Alamofire
 
 class ResultTableViewCell: UITableViewCell {
     //MARK: - Properties
     var property: PropertyModel? {
         didSet {
             propertyLabel.text = property?.title
-            propertyDescription.text = property?.description
+            propertyAddress.text = property?.address
             propertyPrice.text = property?.price
             loadImage(from: property?.imageUrl)
         }
@@ -27,40 +26,11 @@ class ResultTableViewCell: UITableViewCell {
         return imgView
     }()
     
-    private let propertyLabel: UILabel = {
-       let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textAlignment = .left
-        label.font = UIFont.boldSystemFont(ofSize: 16)
-        label.numberOfLines = 1
-        return label
-    }()
+    private let propertyLabel: PropertyText = PropertyText(font: UIFont.boldSystemFont(ofSize: 16))
+    private let propertyAddress: PropertyText = PropertyText()
+    private let propertyPrice: PropertyText = PropertyText(lines: 1)
     
-    private let propertyDescription: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textAlignment = .left
-        label.numberOfLines = 0
-        return label
-    }()
-    
-    private let propertyPrice: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textAlignment = .left
-        label.numberOfLines = 1
-        return label
-    }()
-    
-    let likeButton: UIButton = {
-       let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setImage(UIImage(systemName: "heart"), for: .normal)
-        button.setImage(UIImage(systemName: "heart.fill"), for: .selected)
-        button.tintColor = .red
-        button.addTarget(self, action: #selector(SearchViewController.like(_:)), for: .touchUpInside)
-        return button
-    }()
+    let likeButton: LikeButton = LikeButton(#selector(SearchViewController.like(_:)))
     
     private let textStackView: UIStackView = {
        let stackView = UIStackView()
@@ -105,7 +75,7 @@ class ResultTableViewCell: UITableViewCell {
     private func setTextStackView() {
         textStackView.addArrangedSubview(propertyLabel)
         textStackView.addArrangedSubview(propertyPrice)
-        textStackView.addArrangedSubview(propertyDescription)
+        textStackView.addArrangedSubview(propertyAddress)
         
     }
     

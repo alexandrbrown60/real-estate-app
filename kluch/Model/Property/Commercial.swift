@@ -13,6 +13,7 @@ class Commercial: PropertyModel {
     var title: String = ""
     var description: String = ""
     var price: String = ""
+    var address: String = ""
     
     private var titleData: [String] = [String]()
     
@@ -40,6 +41,8 @@ class Commercial: PropertyModel {
                 let image = field.value.get() as! String
                 self.imageUrl = Constans.imageSmallSize + image
             case "631":
+                self.address = field.value.get() as! String
+            case "625":
                 self.description = field.value.get() as! String
             default:
                 break

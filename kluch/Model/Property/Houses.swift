@@ -13,6 +13,7 @@ class Houses: PropertyModel {
     var title: String = ""
     var description: String = ""
     var price: String = ""
+    var address: String = ""
     
     private var titleData: [String] = [String]()
     
@@ -40,6 +41,8 @@ class Houses: PropertyModel {
                 let image = field.value.get() as! String
                 self.imageUrl = Constans.imageSmallSize + image
             case "554":
+                self.address = field.value.get() as! String
+            case "626":
                 self.description = field.value.get() as! String
             default:
                 break
