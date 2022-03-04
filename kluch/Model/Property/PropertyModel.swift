@@ -5,7 +5,7 @@
 //  Created by Александр Иванов on 03.02.2022.
 //
 
-import UIKit
+import Foundation
 
 protocol PropertyModel {
     var propertyId: String {get set}
